@@ -77,9 +77,23 @@
   
     generalLinks() {
       const links = settings.links;
+      const inlinks = settings.inlinks;
+      const hasUser = api.getCurrentUser() != null
 
-      if (links) {
-        return links.split("|").map(l => {
+      if (hasUser && inlinks) {
+        return inlinks.split("|").map((l, i) => {
+          const values = l.split(",");
+          return this.attach('link', {
+              rawLabel: values[0].trim(),
+              href: values[1].trim(),
+              omitSpan: true,
+              attributes: {
+                target: (values[2] || '').trim()
+              }
+          });
+        });
+      } else if (links) {
+        return links.split("|").map((l, i) => {
           const values = l.split(",");
           return this.attach('link', {
               rawLabel: values[0].trim(),

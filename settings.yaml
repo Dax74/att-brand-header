@@ -9,6 +9,9 @@ mobile_logo_url:
 links:
   type: list
   default: ''
+inlinks:
+  type: list
+  default: ''
 icons:
   type: list
   default: ''
