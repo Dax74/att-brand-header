@@ -1,8 +1,6 @@
-@import "theme_variables";
-
 .b-header {
   width: 100%;
-  background-color: $tertiary;
+  background-color: var(--tertiary);
   height: 48px;
   margin-bottom: 0;
 
@@ -14,10 +12,10 @@
     float: left;
     margin-right: 24px;
     a {
-      color: $secondary;
+      color: var(--secondary);
     }
     &:visited {
-      color: $secondary;
+      color: var(--secondary);
     }
     .rtl & {
       float: right;
@@ -45,15 +43,15 @@
   .nav-pills {
     margin-bottom: 0;
     > li > a {
-      color: $secondary;
+      color: var(--secondary);
       line-height: 22px;
       &:hover {
         color: $quaternary;
         background-color: dark-light-diff($quaternary, $tertiary, -70%, 70%);
       }
       &.active > a, > a.active {
-        color: $secondary;
-        background-color: $quaternary;
+        color: var(--secondary);
+        background-color: var(--quaternary);
       }
     }
   }
@@ -103,7 +101,7 @@
   .panel > ul.icons {
     float: right;
     a, [class^="fa fa-"] {
-      color: $secondary;
+      color: var(--secondary);
     }
     .rtl & {
       float: left;
